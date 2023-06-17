@@ -1,9 +1,5 @@
-import { Login } from "../../Login"
+import { Login } from "../../Login";
 
-export const LoginSection = () =>{
-    return(
-       <div>
-        <Login/>
-       </div> 
-    )
-}
+export const LoginSection = () => {
+  return <Login />;
+};

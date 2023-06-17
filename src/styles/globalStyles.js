@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyle = createGlobalStyle`
+export default createGlobalStyle`
 :root {
 	--color-color-primary: #ff577f;
 	--color-color-primary-50: #ff427f;
@@ -12,8 +12,14 @@ export const GlobalStyle = createGlobalStyle`
 	--color-grey-0: #f8f9fa;
 	--color-sucess: #3fe864;
 	--color-negative: #e83f5b;
+	--color-padrao:#FFFFFF;
+
+	--bg-color:#000000;
     --font-primary: 'Inter', sans-serif;
-    font-size: 62.5%;
+}
+body{
+	background-color:var(--bg-color);
+	color:var(--color-grey-0)
 }
 .text-style-title-1 {
 	font-size: 18px;
@@ -42,21 +48,21 @@ export const GlobalStyle = createGlobalStyle`
 	text-decoration: none;
 	text-transform: none;
 }
-.text-style-headline {
-	font-size: 12px;
-	font-family: "Inter";
-	font-weight: 400;
-	font-style: normal;
-	line-height: 22px;
-	text-decoration: none;
-	text-transform: none;
-}
 .text-style-headline-bold {
 	font-size: 12px;
 	font-family: "Inter";
 	font-weight: 700;
 	font-style: normal;
 	line-height: 18px;
+	text-decoration: none;
+	text-transform: none;
+}
+.text-style-headline {
+	font-size: 12px;
+	font-family: "Inter";
+	font-weight: 400;
+	font-style: normal;
+	line-height: 22px;
 	text-decoration: none;
 	text-transform: none;
 }

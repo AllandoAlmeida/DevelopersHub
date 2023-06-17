@@ -1,10 +1,13 @@
-import { RoutesMain } from "./routes/RoutesMain"
+import { RoutesMain } from "./routes/RoutesMain";
 
-export const App = () =>{
-    return (
+import { ResetStyle } from "./styles/reset";
+
+export const App = () => {
+  return (
     <div>
-      <RoutesMain/>
+     
+      <ResetStyle />
+      <RoutesMain />
     </div>
-  )
-}
-
+  );
+};
