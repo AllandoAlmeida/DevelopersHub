@@ -19,11 +19,12 @@ export const ResetStyle = createGlobalStyle`
 }
 body{
 	background-color:var(--bg-color);
-	color:var(--color-grey-0)
+	color:var(--color-grey-0);
+    margin: 0 1.2rem;
 }
 *{
         box-sizing: border-box;
-        padding: 0;
+        padding: 0 ;
         margin: 0;
         font-size: 62.5%;
     }

@@ -1,13 +1,12 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { createAccountSchema } from "./createAccountSchema";
-import { Input } from "../../Input";
+import { Input } from "../Input";
 import { Select } from "../Select/Select";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../service/api";
 import { ButtonToAccess } from "../Buttons/ButtonToAccess";
 import { StyledForm } from "./styles";
-import { StyledSelect } from "../Select/styles";
 
 export const CreateAccount = () => {
   const {
@@ -86,7 +85,7 @@ export const CreateAccount = () => {
         error={errors.contact}
       />
 
-      <StyledSelect
+      <Select
         label="Selecionar módulo"
         {...register("course_module")}
         error={errors.course_module}
@@ -104,7 +103,7 @@ export const CreateAccount = () => {
         <option value="Quarto módulo (Backend Avançado)">
           Quarto módulo (Backend Avançado)
         </option>
-      </StyledSelect>
+      </Select>
       <div>
         <ButtonToAccess
               type="submit"

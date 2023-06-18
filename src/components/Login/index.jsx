@@ -1,10 +1,11 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Input } from "../../Input";
+import { Input } from "../Input";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../service/api";
 import { loginSchema } from "./loginSchema";
 import { ButtonToAccess } from "../Buttons/ButtonToAccess";
+import { StyledLoginForm } from "./styels";
 
 export const Login = () => {
   const {
@@ -40,20 +41,20 @@ export const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(submit)} noValidate>
+    <StyledLoginForm onSubmit={handleSubmit(submit)} noValidate>
       <Input
         label="Email"
         type="email"
         placeholder="Digite aqui seu e-mail"
         {...register("email")}
-        error={errors.message}
+        error={errors.email}
       />
       <Input
         label="Senha"
         type="password"
         placeholder="Digite aqui sua senha"
         {...register("password")}
-        error={errors.message}
+        error={errors.password}
       />
       <ButtonToAccess
         type="submit"
@@ -62,6 +63,6 @@ export const Login = () => {
         textColor="white"
         hoverBackgroundColor="color-color-primary-50"
       />
-    </form>
+    </StyledLoginForm>
   );
 };
