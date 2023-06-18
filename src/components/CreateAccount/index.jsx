@@ -5,6 +5,9 @@ import { Input } from "../../Input";
 import { Select } from "../Select/Select";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../service/api";
+import { ButtonToAccess } from "../Buttons/ButtonToAccess";
+import { StyledForm } from "./styles";
+import { StyledSelect } from "../Select/styles";
 
 export const CreateAccount = () => {
   const {
@@ -39,7 +42,7 @@ export const CreateAccount = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(submit)} noValidate>
+    <StyledForm onSubmit={handleSubmit(submit)} noValidate>
       <Input
         label="Nome"
         type="text"
@@ -83,7 +86,7 @@ export const CreateAccount = () => {
         error={errors.contact}
       />
 
-      <Select
+      <StyledSelect
         label="Selecionar módulo"
         {...register("course_module")}
         error={errors.course_module}
@@ -101,8 +104,17 @@ export const CreateAccount = () => {
         <option value="Quarto módulo (Backend Avançado)">
           Quarto módulo (Backend Avançado)
         </option>
-      </Select>
-      <button type="submit">Cadastrar</button>
-    </form>
+      </StyledSelect>
+      <div>
+        <ButtonToAccess
+              type="submit"
+              text="Cadastre-se"
+              backgroundColor="color-color-primary-disable"
+              textColor="white"
+              hoverBackgroundColor="color-grey-2"
+            />
+      </div>
+      
+    </StyledForm>
   );
 };

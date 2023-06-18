@@ -2,7 +2,6 @@ import React from "react";
 import { StyledButtonNav } from "../../../styles/buttons";
 
 export const ButtonNav = ({
-  to,
   text,
   width,
   height,
@@ -13,11 +12,10 @@ export const ButtonNav = ({
 }) => {
   return (
     <StyledButtonNav
-      to={to}
       width={width}
       height={height}
       backgroundColor={`var(--${backgroundColor})`}
-      textColor={textColor}
+      textColor={`var(--${textColor})`}
       hoverBackgroundColor={`var(--${hoverBackgroundColor})`}
       {...rest}
     >

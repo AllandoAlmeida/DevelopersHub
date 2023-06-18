@@ -24,7 +24,7 @@ export const StyledButtonAccess = styled.button`
   }
 `;
 
-export const StyledButtonNav = styled(Link)`
+export const StyledButtonNav = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -33,9 +33,9 @@ export const StyledButtonNav = styled(Link)`
   height: ${props => props.height || "4.8rem"};
 
   font-family: var(--font-primary);
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 2.6rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 2.8rem;
 
   border-radius: 0.4rem;
 

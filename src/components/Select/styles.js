@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-export const StyledSectionInput = styled.div`
-  display: flex;
-  flex-direction: column;
+export const StyledSelect = styled.select`
   width: 100%;
 
   label{
@@ -17,7 +15,7 @@ export const StyledSectionInput = styled.div`
 
   }
 
-  input {
+  option {
     border: 0.012rem solid var(--color-grey-0);
     background-color: var(--color-grey-2);
     width: 100%;

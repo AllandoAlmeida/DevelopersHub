@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../service/api";
+import { SectionUnderDevelopment } from "../../components/SectionUnderDevelopment";
+import { HeaderDashboard } from "../../components/Headers/HearderDashboard";
+import { StyledSectionProfile } from "./styles";
 
 export const DashboardPage = () => {
   const navigate = useNavigate();
@@ -13,7 +16,7 @@ export const DashboardPage = () => {
         if (!tokenWithQuotes) {
           navigate("/login");
         } else {
-          const token = tokenWithQuotes.replace(/"/g, '');
+          const token = tokenWithQuotes.replace(/"/g, "");
 
           console.log("Token found:", token);
           const response = await api.get("/profile", {
@@ -33,11 +36,16 @@ export const DashboardPage = () => {
     authentication();
   }, [navigate]);
 
-
   return (
-    <div>
-      <h1>{userData.name}</h1>
-      <p>{userData.course_module}</p>
-    </div>
+    <main>
+      <HeaderDashboard />
+      <StyledSectionProfile>
+        <div>
+          <h1>{userData.name}</h1>
+          <p>{userData.course_module}</p>
+        </div>
+      </StyledSectionProfile>
+      <SectionUnderDevelopment />
+    </main>
   );
 };
