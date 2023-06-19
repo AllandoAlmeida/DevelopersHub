@@ -6,6 +6,7 @@ import { api } from "../../service/api";
 import { loginSchema } from "./loginSchema";
 import { ButtonToAccess } from "../Buttons/ButtonToAccess";
 import { StyledLoginForm } from "./styels";
+import { toast } from "react-toastify";
 
 export const Login = () => {
   const {
@@ -27,11 +28,11 @@ export const Login = () => {
       const response = await api.post("/sessions", body);
       const { token } = response.data;
       localStorage.setItem("@kenzieHub:token", JSON.stringify(token));
-      console.log("Login efetuado com sucesso");
+      toast.success("Login efetuado com sucesso");
       console.log(response.data);
       navigate("/dashboard");
     } catch (error) {
-      console.log(error);
+      toast.error("Ops! Algo deu errado");
     }
   };
 

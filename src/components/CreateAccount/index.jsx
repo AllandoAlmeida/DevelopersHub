@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { api } from "../../service/api";
 import { ButtonToAccess } from "../Buttons/ButtonToAccess";
 import { StyledForm } from "./styles";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const CreateAccount = () => {
   const {
@@ -29,10 +31,11 @@ export const CreateAccount = () => {
         course_module: formData.course_module,
       };
       await api.post("/users", body);
-      console.log("Cadastro efetuado com sucesso;");
+      toast.success("Cadastro efetuado com sucesso;");
       navigate("/");
     } catch (error) {
       console.log(error);
+      toast.error("Ops! Algo deu errado");
     }
   };
 
