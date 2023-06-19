@@ -1,9 +1,7 @@
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../Input";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../service/api";
-import { loginSchema } from "./loginSchema";
 import { ButtonToAccess } from "../Buttons/ButtonToAccess";
 import { StyledLoginForm } from "./styels";
 import { toast } from "react-toastify";
@@ -13,9 +11,7 @@ export const Login = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    resolver: zodResolver(loginSchema),
-  });
+  } = useForm();
 
   const navigate = useNavigate();
 
@@ -29,7 +25,6 @@ export const Login = () => {
       const { token } = response.data;
       localStorage.setItem("@kenzieHub:token", JSON.stringify(token));
       toast.success("Login efetuado com sucesso");
-      console.log(response.data);
       navigate("/dashboard");
     } catch (error) {
       toast.error("Ops! Algo deu errado");
@@ -37,7 +32,6 @@ export const Login = () => {
   };
 
   const submit = async (LoginData) => {
-    console.log(LoginData);
     userRegister(LoginData);
   };
 

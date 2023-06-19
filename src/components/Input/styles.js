@@ -74,11 +74,10 @@ top: 50%;
 right: 1.2rem;
 transform: translateY(-50%);
 cursor: pointer;
-    fill: #ff0000; /* Substitua pela cor desejada */
+    fill: var(--color-negative);
     transition: fill 0.3s ease; 
 
   &:hover svg {
-    /* Estilos para o ícone ao passar o mouse */
-    fill: #00ff00; /* Substitua pela cor desejada */
+    fill: var(--color-sucess);
   }
 `;

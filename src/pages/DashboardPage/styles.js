@@ -14,6 +14,7 @@ export const StyledSectionProfile = styled.section`
   div {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     width: 100%;
@@ -37,5 +38,7 @@ export const StyledSectionProfile = styled.section`
       line-height: 22px;
       color: var(--color-grey-1);
     }
+
+    
   }
 `;

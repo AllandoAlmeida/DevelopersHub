@@ -11,7 +11,7 @@ export const StyledInformation = styled.section`
   border-bottom: 1px solid var(--color-grey-3);
 
   div {
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 100%;
     max-width: 75rem;
@@ -34,5 +34,9 @@ export const StyledInformation = styled.section`
       line-height: 24px;
       color: var(--color-grey-1);
     }
+    @media screen and (min-width: 36.8rem) {
+    display: flex;
+  }
+
   }
 `;
