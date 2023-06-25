@@ -1,22 +1,23 @@
 import React from "react";
-import { StyledButtonNav } from "../../../styles/buttons";
+import { StyledButtonNav } from "./styles";
+
 
 export const ButtonNav = ({
   text,
   width,
   height,
-  backgroundColor,
-  textColor,
-  hoverBackgroundColor,
+  background,
+  textcolor,
+  hover,
   ...rest
 }) => {
   return (
     <StyledButtonNav
       width={width}
       height={height}
-      backgroundColor={`var(--${backgroundColor})`}
-      textColor={`var(--${textColor})`}
-      hoverBackgroundColor={`var(--${hoverBackgroundColor})`}
+      background={`var(--${background})`}
+      textcolor={`var(--${textcolor})`}
+      hover={`var(--${hover})`}
       {...rest}
     >
       {text}

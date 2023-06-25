@@ -1,10 +1,9 @@
 import { useForm } from "react-hook-form";
 import { Input } from "../Input";
-import { useNavigate } from "react-router-dom";
-import { api } from "../../service/api";
 import { ButtonToAccess } from "../Buttons/ButtonToAccess";
-import { StyledLoginForm } from "./styels";
-import { toast } from "react-toastify";
+import { StyledLoginForm } from "./styles";
+import { useContext } from "react";
+import { UserContext } from "../../providers/UserContext";
 
 export const Login = () => {
   const {
@@ -13,28 +12,11 @@ export const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const navigate = useNavigate();
-
-  const userRegister = async (LoginData) => {
-    try {
-      const body = {
-        email: LoginData.email,
-        password: LoginData.password,
-      };
-      const response = await api.post("/sessions", body);
-      const { token } = response.data;
-      localStorage.setItem("@kenzieHub:token", JSON.stringify(token));
-      toast.success("Login efetuado com sucesso");
-      navigate("/dashboard");
-    } catch (error) {
-      toast.error("Ops! Algo deu errado");
-    }
-  };
+  const { userLogin } = useContext(UserContext); // Correção na desestruturação
 
   const submit = async (LoginData) => {
-    userRegister(LoginData);
+    userLogin(LoginData);
   };
-
   return (
     <StyledLoginForm onSubmit={handleSubmit(submit)} noValidate>
       <Input
@@ -54,9 +36,9 @@ export const Login = () => {
       <ButtonToAccess
         type="submit"
         text="Entrar"
-        backgroundColor="color-color-primary"
-        textColor="white"
-        hoverBackgroundColor="color-color-primary-50"
+        background="color-color-primary"
+        textcolor="white"
+        hover="color-color-primary-50"
       />
     </StyledLoginForm>
   );

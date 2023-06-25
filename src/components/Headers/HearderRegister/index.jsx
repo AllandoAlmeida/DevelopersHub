@@ -21,9 +21,9 @@ export const HeaderRegister = () => {
           height="3.2rem"
           type="button"
           text="voltar"
-          backgroundColor="color-grey-3"
-          textColor="color-grey-0"
-          hoverBackgroundColor="color-grey-2"
+          background="color-grey-3"
+          textcolor="color-grey-0"
+          hover="color-grey-2"
           onClick={handletoGoBack}
         />
       </div>

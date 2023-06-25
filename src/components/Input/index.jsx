@@ -20,7 +20,7 @@ export const Input = forwardRef(({ error, label, type, ...rest }, ref) => {
       />
       {type === "password" && (
         <StyledIcon onClick={togglePasswordVisibility}>
-          <FontAwesomeIcon icon={showPassword ? "eye-slash" : "eye"} />
+          <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
         </StyledIcon>
       )} 
       {error ? <p>{error.message}</p> : null}

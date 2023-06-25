@@ -1,18 +1,18 @@
-import { StyledButtonAccess } from "../../../styles/buttons";
+import { StyledButtonAccess } from "./styles";
 
 export const ButtonToAccess = ({
   type,
   text,
-  backgroundColor,
-  textColor,
-  hoverBackgroundColor,
+  background,
+  textcolor,
+  hover,
   ...rest
 }) => {
   return (
     <StyledButtonAccess
-      backgroundColor={`var(--${backgroundColor})`}
-      textColor={textColor}
-      hoverBackgroundColor={`var(--${hoverBackgroundColor})`}
+      background={`var(--${background})`}
+      textcolor={textcolor}
+      hover={`var(--${hover})`}
       {...rest}
     >
       {text}

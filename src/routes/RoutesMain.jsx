@@ -3,12 +3,28 @@ import { HomePage } from "../pages/HomePage";
 import { RegisterPage } from "../pages/RegisterPage";
 import { DashboardPage } from "../pages/DashboardPage";
 
+import { ProtectedRoutes } from "./ProtectedRoutes";
+import { PublicRoutes } from "./PublicRoutes";
+import { TechnologiesProvider } from "../providers/TechnologiesContext";
+
 export const RoutesMain = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/register" element={<RegisterPage />} />
-      <Route path="/dashboard" element={<DashboardPage />} />
+      <Route element={<PublicRoutes />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Route>
+
+      <Route element={<ProtectedRoutes />}>
+        <Route
+          path="/dashboard"
+          element={
+            <TechnologiesProvider>
+              <DashboardPage />
+            </TechnologiesProvider>
+          }
+        />
+      </Route>
     </Routes>
   );
 };

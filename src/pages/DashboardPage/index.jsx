@@ -1,48 +1,37 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../service/api";
-import { SectionUnderDevelopment } from "../../components/SectionUnderDevelopment";
+import { useContext } from "react";
+import {
+  
+  StyledSectionProfile,
+} from "./styles";
+
+import { TechnologiesSection } from "../../components/Section/TechnologiesSection";
 import { HeaderDashboard } from "../../components/Headers/HearderDashboard";
-import { StyledSectionProfile } from "./styles";
-import { toast } from "react-toastify";
+import { UserContext } from "../../providers/UserContext";
+import { ModalAddTechnology } from "../Modal/ModalAddTechnology";
+import { ModalEditTechnology } from "../Modal/ModalEditTechnology";
+import { TechnologiesContext } from "../../providers/TechnologiesContext";
 
 export const DashboardPage = () => {
-  const navigate = useNavigate();
-  const [userData, setUserData] = useState({});
+  const { user } = useContext(UserContext);
+  const { isModalEditTechsOpen, isModalAddTechsOpen } =
+    useContext(TechnologiesContext);
 
-  useEffect(() => {
-    const authentication = async () => {
-      try {
-        const tokenWithQuotes = localStorage.getItem("@kenzieHub:token");
-        if (!tokenWithQuotes) {
-          navigate("/login");
-        } else {
-          const token = tokenWithQuotes.replace(/"/g, "");
-          const response = await api.get("/profile", {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          });
-          const userData = response.data;
-          setUserData(userData);
-        }
-      } catch (error) {
-        toast.error(error);
-      }
-    };
-    authentication();
-  }, [navigate]);
 
   return (
     <main>
+      {isModalAddTechsOpen && <ModalAddTechnology />}
       <HeaderDashboard />
+      {isModalEditTechsOpen && <ModalEditTechnology />}
       <StyledSectionProfile>
         <div>
-          <h1>{userData.name}</h1>
-          <p>{userData.course_module}</p>
+          <h1>{user?.name}</h1>
+          <p>{user?.course_module}</p>
         </div>
       </StyledSectionProfile>
-      <SectionUnderDevelopment />
+      <TechnologiesSection />
     </main>
   );
 };

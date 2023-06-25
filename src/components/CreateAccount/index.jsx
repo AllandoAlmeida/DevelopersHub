@@ -1,16 +1,20 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { createAccountSchema } from "./createAccountSchema";
+
 import { Input } from "../Input";
 import { Select } from "../Select/Select";
-import { useNavigate } from "react-router-dom";
-import { api } from "../../service/api";
 import { ButtonToAccess } from "../Buttons/ButtonToAccess";
+
 import { StyledForm } from "./styles";
-import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import { useContext } from "react";
+import { UserContext } from "../../providers/UserContext";
+
+
 export const CreateAccount = () => {
+
   const {
     register,
     handleSubmit,
@@ -18,26 +22,9 @@ export const CreateAccount = () => {
   } = useForm({
     resolver: zodResolver(createAccountSchema),
   });
-  const navigate = useNavigate();
 
-  const userRegister = async (formData) => {
-    try {
-      const body = {
-        email: formData.email,
-        password: formData.password,
-        name: formData.name,
-        bio: formData.bio,
-        contact: formData.contact,
-        course_module: formData.course_module,
-      };
-      await api.post("/users", body);
-      toast.success("Cadastro efetuado com sucesso;");
-      navigate("/");
-    } catch (error) {
-      console.log(error);
-      toast.error("Ops! Algo deu errado");
-    }
-  };
+  const {userRegister} = useContext (UserContext)
+  
 
   const submit = async (formData) => {
     userRegister(formData);
@@ -111,9 +98,9 @@ export const CreateAccount = () => {
         <ButtonToAccess
               type="submit"
               text="Cadastre-se"
-              backgroundColor="color-color-primary-disable"
-              textColor="white"
-              hoverBackgroundColor="color-grey-2"
+              background="color-color-primary-disable"
+              textcolor="white"
+              hover="color-grey-2"
             />
       </div>
       
