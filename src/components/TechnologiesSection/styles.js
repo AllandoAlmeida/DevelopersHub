@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const StyledContainerTechs = styled.section`
- 
   width: 100%;
   height: 46.5rem;
   padding: 1rem;

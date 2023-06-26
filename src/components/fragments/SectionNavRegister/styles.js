@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-
 export const StyledNavRegister = styled.div`
-display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -26,9 +25,9 @@ display: flex;
     font-weight: 600;
     font-size: 12px;
     line-height: 18px;
-    color:var(--color-grey-1)
+    color: var(--color-grey-1);
   }
-`
+`;
 
 export const StyledLinkWrapper = styled(Link)`
   display: inline-flex;
@@ -45,7 +44,7 @@ export const StyledLinkWrapper = styled(Link)`
   border-radius: 0.4rem;
 
   background-color: var(--color-grey-1);
-  color: ${props => props.textcolor || "var(--default-text-color)"};
+  color: ${(props) => props.textcolor || "var(--default-text-color)"};
 
   &:hover {
     background-color: var(--color-grey-2);

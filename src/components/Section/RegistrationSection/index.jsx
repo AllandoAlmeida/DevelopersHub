@@ -1,9 +1,10 @@
-import { CreateAccount } from "../../CreateAccount";
+import { CreateAccountForm } from "../../SectionForn/CreateAccountForm";
+
 
 export const RegistrationSection = () => {
   return (
     <>
-      <CreateAccount />
+      <CreateAccountForm />
     </>
   );
 };

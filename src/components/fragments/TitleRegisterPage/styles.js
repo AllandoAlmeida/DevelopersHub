@@ -28,6 +28,6 @@ export const StyledDivTitle = styled.div`
     font-weight: 400;
     font-size: 12px;
     line-height: 22px;
-    color:var(--color-grey-1)
+    color: var(--color-grey-1);
   }
 `;

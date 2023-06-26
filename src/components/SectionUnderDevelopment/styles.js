@@ -35,8 +35,7 @@ export const StyledInformation = styled.section`
       color: var(--color-grey-1);
     }
     @media screen and (min-width: 36.8rem) {
-    display: flex;
-  }
-
+      display: flex;
+    }
   }
 `;

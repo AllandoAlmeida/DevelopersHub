@@ -1,5 +1,4 @@
 import { useContext } from "react";
-
 import { HeaderDashboard } from "../../components/Headers/HearderDashboard";
 import { ModalAddTechnology } from "../Modal/ModalAddTechnology";
 import { ModalEditTechnology } from "../Modal/ModalEditTechnology";
@@ -18,7 +17,7 @@ export const DashboardPage = () => {
       <HeaderDashboard />
       {isModalEditTechsOpen && <ModalEditTechnology />}
       <ProfileSection />
-      <SectionAddTechnology/>
+      <SectionAddTechnology />
       <TechnologiesSection />
     </>
   );

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledSectionProfile = styled.section`
-position:sticky;
+  position: sticky;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,7 +39,5 @@ position:sticky;
       line-height: 22px;
       color: var(--color-grey-1);
     }
-
-    
   }
 `;

@@ -5,7 +5,7 @@ export const StyledInformation = styled.section`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height:100%;
+  height: 100%;
   padding: 1rem;
   background-color: var(--color-grey-4);
 
@@ -16,7 +16,7 @@ export const StyledInformation = styled.section`
     align-items: center;
     width: 80%;
     max-width: 75rem;
-    gap:1rem;
+    gap: 1rem;
     height: 80%;
     padding: 0;
     background-color: var(--color-grey-3);

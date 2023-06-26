@@ -11,7 +11,7 @@ export const StyledTechCard = styled.ul`
   height: 5.2rem;
   background-color: var(--color-grey-4);
   border-radius: 0.4rem;
- 
+
   li:nth-child(1) {
     font-family: "Inter";
     font-style: normal;

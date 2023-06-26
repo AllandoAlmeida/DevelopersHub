@@ -1,6 +1,5 @@
 import { StyledDivTitle } from "./styles";
 
-
 export const TitleHomePage = () => {
   return (
     <StyledDivTitle>

@@ -9,8 +9,6 @@ export const StyledTitleTechnologies = styled.div`
   height: 5.3rem;
   padding: 0 1.2rem;
   background-color: var(--color-grey-4);
-  border: 1px solid;
-
   div:nth-child(1) {
     display: flex;
     justify-content: space-between;

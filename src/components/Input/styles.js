@@ -67,15 +67,14 @@ export const StyledTogglePasswordButton = styled.button`
   outline: none;
 `;
 
-
 export const StyledIcon = styled(FontAwesomeIcon)`
-position: absolute;
-top: 50%;
-right: 1.2rem;
-transform: translateY(-50%);
-cursor: pointer;
-    fill: var(--color-negative);
-    transition: fill 0.3s ease; 
+  position: absolute;
+  top: 50%;
+  right: 1.2rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  fill: var(--color-negative);
+  transition: fill 0.3s ease;
 
   &:hover svg {
     fill: var(--color-sucess);

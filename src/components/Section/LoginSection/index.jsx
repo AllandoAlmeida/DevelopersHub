@@ -1,7 +1,6 @@
-import { Login } from "../../Login";
+import { LoginForn } from "../../SectionForn/LoginForm";
+
 
 export const LoginSection = () => {
-  return (
-  <Login />
-  )
+  return <LoginForn />;
 };

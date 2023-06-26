@@ -1,7 +1,8 @@
 import React, { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { Slide, toast } from "react-toastify";
 import { api } from "../service/api";
+import { Loading } from "../components/Loading";
 
 export const UserContext = createContext({});
 
@@ -10,7 +11,6 @@ export const UserProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [logoutFlag, setLogoutFlag] = useState(false);
 
-  
   const navigate = useNavigate();
 
   const userRegister = async (formData) => {
@@ -24,11 +24,16 @@ export const UserProvider = ({ children }) => {
         course_module: formData.course_module,
       };
       await api.post("/users", body);
-      toast.success("Cadastro efetuado com sucesso");
+      toast.success("Cadastro realizado com Sucesso!", {
+        transition: Slide,
+        autoClose: 2000,
+      });
       navigate("/");
     } catch (error) {
-      console.log(error);
-      toast.error("Ops! Algo deu errado");
+      toast.error("Ocorreu um erro ao tentar realizar a operação solicitada.", {
+        transition: Slide,
+        autoClose: 2000,
+      });
     }
   };
 
@@ -42,19 +47,24 @@ export const UserProvider = ({ children }) => {
       const { token, user } = response.data;
       localStorage.setItem("@kenzieHub:token", JSON.stringify(token));
       setUser(user);
-      toast.success("Login efetuado com sucesso");
+      toast.success("Login realizado com Sucesso!", {
+        transition: Slide,
+        autoClose: 2000,
+      });
       navigate("/dashboard");
     } catch (error) {
-      toast.error("Ops! Algo deu errado");
+      toast.error("Ocorreu um erro ao tentar realizar a operação solicitada.", {
+        transition: Slide,
+        autoClose: 2000,
+      });
     }
   };
 
   const Logout = () => {
     localStorage.removeItem("@kenzieHub:token");
     setUser(null);
-   
-    setLogoutFlag(true);
 
+    setLogoutFlag(true);
   };
 
   useEffect(() => {
@@ -71,11 +81,15 @@ export const UserProvider = ({ children }) => {
             },
           });
           setUser(data);
-         
         } catch (error) {
-          console.log(error);
+          toast.error(
+            "Ocorreu um erro ao tentar realizar a operação solicitada.",
+            {
+              transition: Slide,
+              autoClose: 2000,
+            }
+          );
           localStorage.removeItem("@kenzieHub:token");
-       
         } finally {
           setLoading(false);
         }
@@ -92,6 +106,16 @@ export const UserProvider = ({ children }) => {
       setLogoutFlag(false);
     }
   }, [logoutFlag, navigate]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <UserContext.Provider

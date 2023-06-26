@@ -2,9 +2,7 @@ import { z } from "zod";
 
 export const createAccountSchema = z
   .object({
-    name: z
-    .string()
-    .nonempty("Informar seu nome."),
+    name: z.string().nonempty("Informar seu nome."),
     email: z
       .string()
       .nonempty("O e-mail é obrigatório.")

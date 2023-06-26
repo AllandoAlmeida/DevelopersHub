@@ -4,10 +4,8 @@ import { StyledHeaderDash } from "./styles";
 import { useContext } from "react";
 import { UserContext } from "../../../providers/UserContext";
 
-
 export const HeaderDashboard = () => {
-
-  const {Logout} = useContext (UserContext)
+  const { Logout } = useContext(UserContext);
 
   return (
     <StyledHeaderDash>

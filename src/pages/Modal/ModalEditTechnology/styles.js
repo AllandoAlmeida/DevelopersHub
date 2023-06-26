@@ -28,6 +28,6 @@ export const StyledModalItems = styled.div`
 `;
 
 export const StyledModalButton = styled.div`
-display: flex;
-gap: 5rem;
-`
+  display: flex;
+  gap: 5rem;
+`;

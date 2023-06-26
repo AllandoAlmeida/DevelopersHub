@@ -5,9 +5,7 @@ export const EmptyTechList = () => {
     <StyledInformation>
       <div>
         <p>Não há tecnologias associadas ao seu perfil</p>
-        <p>
-          Não pegar tempo, cadastre agora mesmo!
-        </p>
+        <p>Não pegar tempo, cadastre agora mesmo!</p>
       </div>
     </StyledInformation>
   );

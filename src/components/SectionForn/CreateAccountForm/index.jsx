@@ -1,20 +1,15 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { createAccountSchema } from "./createAccountSchema";
-
-import { Input } from "../Input";
-import { Select } from "../Select/Select";
-import { ButtonToAccess } from "../Buttons/ButtonToAccess";
-
 import { StyledForm } from "./styles";
 import "react-toastify/dist/ReactToastify.css";
-
 import { useContext } from "react";
-import { UserContext } from "../../providers/UserContext";
+import { Input } from "../../Input";
+import { ButtonToAccess } from "../../Buttons/ButtonToAccess";
+import { UserContext } from "../../../providers/UserContext";
+import { Select } from "../../Select/Select";
 
-
-export const CreateAccount = () => {
-
+export const CreateAccountForm = () => {
   const {
     register,
     handleSubmit,
@@ -23,8 +18,7 @@ export const CreateAccount = () => {
     resolver: zodResolver(createAccountSchema),
   });
 
-  const {userRegister} = useContext (UserContext)
-  
+  const { userRegister } = useContext(UserContext);
 
   const submit = async (formData) => {
     userRegister(formData);
@@ -96,14 +90,13 @@ export const CreateAccount = () => {
       </Select>
       <div>
         <ButtonToAccess
-              type="submit"
-              text="Cadastre-se"
-              background="color-color-primary-disable"
-              textcolor="white"
-              hover="color-grey-2"
-            />
+          type="submit"
+          text="Cadastre-se"
+          background="color-color-primary-disable"
+          textcolor="white"
+          hover="color-grey-2"
+        />
       </div>
-      
     </StyledForm>
   );
 };

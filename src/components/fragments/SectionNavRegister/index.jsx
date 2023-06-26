@@ -1,5 +1,4 @@
-import {StyledLinkWrapper, StyledNavRegister } from "./styles";
-
+import { StyledLinkWrapper, StyledNavRegister } from "./styles";
 
 export const SectionNavRegister = () => {
   return (

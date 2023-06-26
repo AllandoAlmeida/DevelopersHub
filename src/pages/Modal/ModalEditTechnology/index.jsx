@@ -6,7 +6,11 @@ import { useForm } from "react-hook-form";
 import { Input } from "../../../components/Input";
 import { HeaderModal } from "../HeaderModal";
 import { DeletingTechnology } from "../../../components/DeletingTechnology";
-import { StyledContainerModal, StyledModalButton, StyledModalItems } from "./styles";
+import {
+  StyledContainerModal,
+  StyledModalButton,
+  StyledModalItems,
+} from "./styles";
 
 export const ModalEditTechnology = () => {
   const {
@@ -31,10 +35,10 @@ export const ModalEditTechnology = () => {
   return (
     <StyledContainerModal role="dialog">
       <StyledModalItems>
-      <HeaderModal
-        text="Tecnologia Detalhes"
-        onClick={setIsModalEditTechsOpen}
-      />
+        <HeaderModal
+          text="Tecnologia Detalhes"
+          onClick={setIsModalEditTechsOpen}
+        />
         <form onSubmit={handleSubmit(submit)}>
           <Input
             label="Nome"
@@ -80,20 +84,19 @@ export const ModalEditTechnology = () => {
             />
           </StyledModalButton>
         </form>
-       
+
         {isDeleting ? (
-        <DeletingTechnology
-          trueCallback={async () => {
-            await handleDelete(isDeleting.id);
-            setIsDeleting(null);
-            setIsModalEditTechsOpen(false);
-          }}
-          falseCallback={() => setIsDeleting(null)}
-        >
-          <h3>Confirma a Exclusão dessa tecnologia?</h3>
-        </DeletingTechnology>
-      ) : null}
-     
+          <DeletingTechnology
+            trueCallback={async () => {
+              await handleDelete(isDeleting.id);
+              setIsDeleting(null);
+              setIsModalEditTechsOpen(false);
+            }}
+            falseCallback={() => setIsDeleting(null)}
+          >
+            <h3>Confirma a Exclusão dessa tecnologia?</h3>
+          </DeletingTechnology>
+        ) : null}
       </StyledModalItems>
     </StyledContainerModal>
   );

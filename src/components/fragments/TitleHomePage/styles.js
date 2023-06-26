@@ -10,7 +10,7 @@ export const StyledDivTitle = styled.div`
   width: 100%;
   height: 7rem;
   max-width: 37rem;
-  margin: 4rem auto 0 ;
+  margin: 4rem auto 0;
   padding: 5rem 2rem 0;
 
   h1 {

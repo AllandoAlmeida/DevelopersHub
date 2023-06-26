@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const StyledHeaderModal = styled.header`
-position:fixed;
-top: 0;
-left:0;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 5.5rem;
   background-color: var(--color-grey-2);

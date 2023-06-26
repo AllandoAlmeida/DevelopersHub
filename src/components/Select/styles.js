@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const StyledSectionSelect = styled.div`
-
-p{
+  p {
     font-family: "Inter";
     font-style: normal;
     font-weight: 400;
@@ -10,9 +9,8 @@ p{
     line-height: 2.6rem;
     margin-bottom: 0.2rem;
     color: var(--color-negative);
-
   }
-  
+
   label {
     font-family: "Inter";
     font-style: normal;
@@ -43,10 +41,9 @@ p{
     color: var(--color-grey-0);
 
     :hover {
-        border: 0.012rem solid var(--color-grey-1);
-        color: var(--color-grey-1);
-      }
-    
+      border: 0.012rem solid var(--color-grey-1);
+      color: var(--color-grey-1);
+    }
 
     option {
       border: 0.012rem solid var(--color-grey-0);
@@ -65,9 +62,6 @@ p{
       line-height: 2.6rem;
 
       color: var(--color-grey-0);
-
-      
     }
-    
   }
 `;

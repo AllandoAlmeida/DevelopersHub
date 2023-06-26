@@ -1,7 +1,6 @@
 import React from "react";
 import { StyledButtonNav } from "./styles";
 
-
 export const ButtonNav = ({
   text,
   width,

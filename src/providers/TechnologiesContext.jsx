@@ -33,7 +33,7 @@ export const TechnologiesProvider = ({ children }) => {
       });
       setIsModalEditTechsOpen(false);
     } catch (error) {
-      toast.success("Não foi possivel realizar sua solictação!", {
+      toast.error("Ocorreu um erro ao tentar realizar a operação solicitada.", {
         transition: Slide,
         autoClose: 2000,
       });
@@ -54,12 +54,12 @@ export const TechnologiesProvider = ({ children }) => {
           (technology) => technology.id !== technologyToEditId
         )
       );
-      toast.success("Cancelamento realizado com Sucesso!", {
+      toast.success("Exclusão realizada com Sucesso!", {
         transition: Slide,
         autoClose: 2000,
       });
     } catch (error) {
-      toast.success("Não foi possivel realizar sua solictação!", {
+      toast.error("Ocorreu um erro ao tentar realizar a operação solicitada.", {
         transition: Slide,
         autoClose: 2000,
       });
@@ -88,19 +88,21 @@ export const TechnologiesProvider = ({ children }) => {
         })
       );
 
-      toast.success("Tech editada com sucesso!", {
+      toast.success("Status atualizado com sucesso!", {
         transition: Slide,
         autoClose: 2000,
       });
 
       setIsModalEditTechsOpen(false);
     } catch (error) {
-      console.log(error);
+      toast.error("Ocorreu um erro ao tentar realizar a operação solicitada.", {
+        transition: Slide,
+        autoClose: 2000,
+      });
     }
   };
 
   const handleCardClick = (technology) => {
-    console.log("handleCardClick");
     setActiveCard(technology.id);
   };
 
