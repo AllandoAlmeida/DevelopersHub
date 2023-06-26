@@ -1,11 +1,12 @@
 
 import { TechnologiesList } from "./TechnologiesList";
+import { StyledContainerTechs } from "./styles";
 
 export const TechnologiesSection = () => {
 
   return (
-    <section>
+    <StyledContainerTechs>
       <TechnologiesList />
-    </section>
+    </StyledContainerTechs>
   );
 };

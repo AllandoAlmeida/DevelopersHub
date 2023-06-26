@@ -12,7 +12,7 @@ export const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const { userLogin } = useContext(UserContext); // Correção na desestruturação
+  const { userLogin } = useContext(UserContext);
 
   const submit = async (LoginData) => {
     userLogin(LoginData);

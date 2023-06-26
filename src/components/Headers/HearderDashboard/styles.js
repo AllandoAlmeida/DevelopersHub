@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHeaderDash = styled.header`
+  position: sticky;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,15 +11,13 @@ export const StyledHeaderDash = styled.header`
   background-color: var(--color-grey-4);
   border-bottom: 1px solid var(--color-grey-3);
 
-
   div:nth-child(1) {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     align-items: center;
     width: 100%;
     max-width: 75rem;
     height: 7.2rem;
-    
   }
 
   img {

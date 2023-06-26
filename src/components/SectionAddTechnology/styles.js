@@ -1,27 +1,20 @@
 import styled from "styled-components";
 
-export const StyledTechList = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  
-  margin: 0 auto;
-  padding: 2rem 1.2rem;
-  background-color: var(--color-grey-4);
-`;
-
 export const StyledTitleTechnologies = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+
   width: 100%;
   margin: 0 auto;
+  height: 5.3rem;
   padding: 0 1.2rem;
   background-color: var(--color-grey-4);
+  border: 1px solid;
 
   div:nth-child(1) {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     max-width: 75rem;
     margin: 1.8rem auto;

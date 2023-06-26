@@ -29,12 +29,12 @@ export const ModalEditTechnology = () => {
   };
 
   return (
-    <StyledContainerModal>
+    <StyledContainerModal role="dialog">
+      <StyledModalItems>
       <HeaderModal
         text="Tecnologia Detalhes"
         onClick={setIsModalEditTechsOpen}
       />
-      <StyledModalItems>
         <form onSubmit={handleSubmit(submit)}>
           <Input
             label="Nome"
@@ -80,7 +80,7 @@ export const ModalEditTechnology = () => {
             />
           </StyledModalButton>
         </form>
-        <div>
+       
         {isDeleting ? (
         <DeletingTechnology
           trueCallback={async () => {
@@ -93,7 +93,7 @@ export const ModalEditTechnology = () => {
           <h3>Confirma a Exclusão dessa tecnologia?</h3>
         </DeletingTechnology>
       ) : null}
-        </div>
+     
       </StyledModalItems>
     </StyledContainerModal>
   );

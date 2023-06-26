@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledSectionProfile = styled.section`
+position:sticky;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +20,7 @@ export const StyledSectionProfile = styled.section`
     justify-content: space-between;
     width: 100%;
     max-width: 75rem;
-    height: 7.2rem;
+    height: 11.8rem;
     margin: 0 auto;
 
     h1 {

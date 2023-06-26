@@ -20,9 +20,9 @@ export const HeaderDashboard = () => {
           height="3.2rem"
           type="button"
           text="Sair"
-          backgroundcolor="color-grey-3"
+          background="color-grey-3"
           textcolor="color-grey-0"
-          hoverbackgroundcolor="color-grey-2"
+          hover="color-grey-2"
           onClick={Logout}
         />
       </div>
