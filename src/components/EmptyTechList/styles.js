@@ -14,12 +14,12 @@ export const StyledInformation = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 90%;
     max-width: 75rem;
     gap: 1rem;
-    height: 80%;
+    height: 90%;
     padding: 0;
-    background-color: var(--color-grey-3);
+    background-color: var(--color-grey-4);
 
     border-radius: 0.5rem;
 
@@ -27,9 +27,9 @@ export const StyledInformation = styled.section`
       font-family: "Inter";
       font-style: normal;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 16px;
       line-height: 28px;
-      color: var(--color-grey-0);
+      color: var(--color-grey-1);
     }
     p:nth-child(2) {
       font-family: "Inter";

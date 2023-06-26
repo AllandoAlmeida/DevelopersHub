@@ -4,6 +4,8 @@ export const StyledContainerAddModal = styled.section`
   position: fixed;
   top: 50%;
   left: 50%;
+  width: 94%;
+  max-width: 36.9rem;
   transform: translate(-50%, -50%);
   width: clamp(20rem 10% 36.9rem);
   background-color: var(--color-grey-3);

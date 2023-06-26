@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledContainerDeleting = styled.section`
   width: 100%;
+  max-width: 36.9rem;
   border-radius: 0.4rem;
   padding: 0 1.2rem;
   background-color: var(--color-grey-3);

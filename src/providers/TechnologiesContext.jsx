@@ -26,12 +26,13 @@ export const TechnologiesProvider = ({ children }) => {
       });
 
       setTechnologies((technologies) => [...technologies, data]);
+      
+      setIsModalAddTechsOpen(false);
 
       toast.success("Cadastro realizado com Sucesso!", {
         transition: Slide,
         autoClose: 2000,
       });
-      setIsModalEditTechsOpen(false);
     } catch (error) {
       toast.error("Ocorreu um erro ao tentar realizar a operação solicitada.", {
         transition: Slide,

@@ -13,12 +13,12 @@ export const DashboardPage = () => {
 
   return (
     <>
-      {isModalAddTechsOpen && <ModalAddTechnology />}
       <HeaderDashboard />
-      {isModalEditTechsOpen && <ModalEditTechnology />}
       <ProfileSection />
       <SectionAddTechnology />
       <TechnologiesSection />
+      {isModalAddTechsOpen && <ModalAddTechnology />}
+      {isModalEditTechsOpen && <ModalEditTechnology />}
     </>
   );
 };

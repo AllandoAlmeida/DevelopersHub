@@ -12,6 +12,7 @@ import {
   StyledModalItems,
 } from "./styles";
 
+
 export const ModalEditTechnology = () => {
   const {
     tecnologyToEdit,
@@ -31,6 +32,7 @@ export const ModalEditTechnology = () => {
   const submit = (formData) => {
     handleUpdateTech(tecnologyToEdit.id, formData);
   };
+
 
   return (
     <StyledContainerModal role="dialog">

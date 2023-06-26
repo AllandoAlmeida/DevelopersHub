@@ -7,10 +7,12 @@ import { HeaderModal } from "../HeaderModal";
 import { ButtonToAccess } from "../../../components/Buttons/ButtonToAccess";
 import { StyledContainerAddModal, StyledModalItems } from "./styles";
 
+
 export const ModalAddTechnology = () => {
   const { setIsModalAddTechsOpen, createTechnology } =
     useContext(TechnologiesContext);
   const { register, handleSubmit, errors } = useForm();
+
 
   const submit = (formData) => {
     createTechnology(formData);
@@ -22,6 +24,7 @@ export const ModalAddTechnology = () => {
         <HeaderModal
           text="Cadastrar Tecnologia"
           onClick={setIsModalAddTechsOpen}
+          
         />
         <form onSubmit={handleSubmit(submit)}>
           <Input

@@ -4,7 +4,7 @@ export const StyledTechList = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 90%;
+  height: max-content;
   max-width: 75rem;
   padding: 2rem;
 

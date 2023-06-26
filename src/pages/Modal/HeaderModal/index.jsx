@@ -1,6 +1,6 @@
 import { ButtonNav } from "../../../components/Buttons/ButtonNav";
 import { StyledHeaderModal } from "./styles";
-export const HeaderModal = ({ text, onClick }) => {
+export const HeaderModal = ({ text, onClick}) => {
   return (
     <StyledHeaderModal>
       <div>
@@ -13,6 +13,7 @@ export const HeaderModal = ({ text, onClick }) => {
           backgroundcolor="color-grey-2"
           textcolor="color-grey-1"
           hoverbackgroundcolor="color-grey-2"
+         
           onClick={() => onClick(false)}
         />
       </div>
